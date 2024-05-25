@@ -7,15 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TO-DO VUE.JS</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
     <div id="app">
         <div id="wrapper">
-            <h1>TO-DO VUE.JS</h1>
+            <h1>SIMPLES TO-DO LIST EM VUE.JS</h1>
+            <a href="https://github.com/henrioliveiragit"><button style="font-size:20px; background-color: gray"><i class="fa fa-github"> GitHub</i></button></a>
+            
+            <p>by: Henrique Oliveira</p>
+            
             <div id="form-wrapper">
                 <div id="o-form">
-                    <input v-model="textoNovoItem" @keyup.enter="salvarNovoItem" type="text" maxlength="20" id="text-novo-item">
+                    <input v-model="textoNovoItem" @keyup.enter="salvarNovoItem" type="text" maxlength="20"
+                        id="text-novo-item" placeholder="Aperte Enter Para Adicionar">
                     <div>
                         <input type="checkbox" v-model="novoItemImportante" id="is-importante">
                         <label for="is-importante"> Importante</label><br>
@@ -31,9 +37,8 @@
                 <div class="item" v-bind:class="{importante : item.importante, feito: item.feito}" v-for="item in lista"
                     v-on:click="item.feito = !item.feito">
                     <p class="texto-item">{{item.texto}}</p>
+
                 </div>
-
-
             </div>
         </div>
     </div>
@@ -43,8 +48,7 @@
         Vue.createApp({
             methods: {
                 salvarNovoItem() {
-                    if(this.textoNovoItem.length > 0)
-                    {
+                    if (this.textoNovoItem.length > 0) {
 
                         //cria um novo objeto
                         let novoItem = {
@@ -52,7 +56,7 @@
                             texto: this.textoNovoItem,
                             importante: this.novoItemImportante,
                             feito: false,
-    
+
                         };
                         //coloca esse novo objeto no final da lista
                         this.lista.push(novoItem);
@@ -62,7 +66,6 @@
                     }
 
                 }
-
             },
             data() {
                 return {
@@ -70,21 +73,45 @@
                     novoItemImportante: false,
                     lista: [
                         {
-                            texto: "Clique na nota",
+                            texto: "Estudar",
                             importante: true,
                             feito: false,
-                        }
+                        },
+                        {
+                            texto: "Lavar a Louça",
+                            importante: false,
+                            feito: false,
+                        },
+
+                        {
+                            texto: "Ler",
+                            importante: false,
+                            feito: false,
+                        },
+
+                        {
+                            texto: "Beber Água",
+                            importante: false,
+                            feito: false,
+                        },
+
+                        {
+                            texto: "Fazer Café",
+                            importante: false,
+                            feito: false,
+                        },
+
 
                     ]
 
                 }
             },
             computed: {
-                qtdeDigitada(){
+                qtdeDigitada() {
                     return this.textoNovoItem.length
                 }
             }
-            
+
         }).mount("#app")
     </script>
 

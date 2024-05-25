@@ -6,16 +6,17 @@ body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: #eee;
-  background-image: linear-gradient(#eee, #ccc);
-  color: #14453d;
+  background-color: #253237 ;
+  color: #FFEDED !;
   font-family: sans-serif;
 }
 h1 {
   font-size: 4rem;
   color: #85c1e0;
-  text-decoration: line-through;
   text-decoration-color: rgba(247, 204, 1, 0.8);
+}
+p{
+  color: #FFEDED
 }
 
 #wrapper {
@@ -111,12 +112,13 @@ button:hover{
   column-gap: 1em;
   row-gap: 1em;
   margin: 2em;
+
 }
 
 .item{
   width: 180px;
   height: 180px;
-  background-color: #fff684;
+  background-color: #CEC075 !important;
   padding: 0.33em;
   box-shadow: 0px 0px 4px rgba(0, 050, 0, 0.1);
   position: relative;
@@ -132,7 +134,9 @@ button:hover{
 
 .item:hover{
   opacity: 1;
+  background-color: #ec1d2477!important;
 }
+
 
 .item::before{
   content: "";
@@ -151,12 +155,12 @@ button:hover{
 }
 
 .item.importante{
-  background-color: #FF7161;
+  background-color: #CEC075;
   color: #FFF;
 }
 
 .item.importante::before{
-  background-color: rgba(255, 90, 71,0.6);
+  background-color: #7EA8BE!important;
 }
 
 .item.feito, .item.importante.feito{
@@ -165,6 +169,28 @@ button:hover{
   color: #000;
   text-decoration: line-through;
   text-decoration-color: rgba(247, 204, 1, 0.7);
+  display: none;
+}
+.btn-github{
+  border-radius:0;
+  background-color:#0971E4;
+  padding-left:0;
+  border:0 none;
+}
+.btn-github > span{
+  padding:6px 12px;
+  margin-right:12px;
+  background-color:#0A62C4;
+}
+.btn-github:hover,
+.btn-github:active,
+.btn-github:focus{
+  background:#0969d6;
+}
+.btn-github:hover > span,
+.btn-github:active > span,
+.btn-github:focus > span{
+  background:#095bb8;
 }
 
 .item.feito::before, .item.importante.feito::before{
